@@ -1,9 +1,9 @@
 package juliang
 
 import (
-	"juliang_sdk/com.juliang/common"
-	"juliang_sdk/com.juliang/enums"
-	"juliang_sdk/com.juliang/ext"
+	"gitee.com/xgqitian/juliang-go-sdk/com.juliang/common"
+	"gitee.com/xgqitian/juliang-go-sdk/com.juliang/enums"
+	"gitee.com/xgqitian/juliang-go-sdk/com.juliang/ext"
 	"net/url"
 	"reflect"
 )
