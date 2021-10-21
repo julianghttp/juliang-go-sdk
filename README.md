@@ -31,7 +31,7 @@ go get https://gitee.com/xgqitian/juliang-go-sdk
 前往 [gitee代码托管地址](https://gitee.com/xgqitian/juliang-go-sdk) 下载最新代码，解压后将其放在您的GOPATH中
 
 ## 示例
-在test/juliang_test.go文件中看详细示例
+在[juliang_test.go](https://gitee.com/xgqitian/juliang-go-sdk/blob/master/test/juliang_test.go) 文件中看详细示例
 ```go
 package main
 
