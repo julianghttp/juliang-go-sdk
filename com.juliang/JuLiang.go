@@ -1,4 +1,4 @@
-package main
+package juliang
 
 import (
 	"juliang_sdk/com.juliang/common"
