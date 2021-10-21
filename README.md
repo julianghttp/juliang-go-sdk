@@ -57,5 +57,5 @@ func dynamicGetIps() {
 
 
 ## 参考资料
-* [API文档](http://www.juliangip.com/help/api/api)
+* [API文档](https://www.juliangip.com/help/api/api/)
 
