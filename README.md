@@ -16,8 +16,8 @@ GOPROXY=https://goproxy.io,direct
 在代码块中直接引用即可
 ```go
     import (
-	juliang "gitee.com/xgqitian/juliang-go-sdk/com.juliang"
-	"gitee.com/xgqitian/juliang-go-sdk/com.juliang/common"
+	    juliang "gitee.com/xgqitian/juliang-go-sdk/com.juliang"
+	    "gitee.com/xgqitian/juliang-go-sdk/com.juliang/common"
     )
 ```
 
