@@ -2,9 +2,9 @@ package common
 
 //独享代理 -- 设置代理IP白名单
 type AloneSetWhiteIp struct {
-	key      string
-	trade_no string
-	ips      string
+	key      string //密钥
+	trade_no string //业务编号
+	ips      string //IP列表
 }
 
 func (a *AloneSetWhiteIp) Key() string {

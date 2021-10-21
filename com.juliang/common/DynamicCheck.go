@@ -2,9 +2,9 @@ package common
 
 //动态代理 -- 校验代理有效性
 type DynamicCheck struct {
-	key      string
-	trade_no string
-	proxy    string
+	key      string //密钥
+	trade_no string //业务编号
+	proxy    string //代理列表
 }
 
 func (d *DynamicCheck) Key() string {

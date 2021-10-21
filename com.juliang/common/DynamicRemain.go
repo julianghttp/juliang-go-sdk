@@ -2,9 +2,9 @@ package common
 
 //动态代理 -- 获取代理剩余可用时长
 type DynamicRemain struct {
-	key      string
-	trade_no string
-	proxy    string
+	key      string //密钥
+	trade_no string //业务编号
+	proxy    string //代理列表
 }
 
 func (d *DynamicRemain) Key() string {

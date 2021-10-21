@@ -2,21 +2,21 @@ package common
 
 //动态代理 -- 提取动态代理
 type DynamicGetIps struct {
-	key         string
-	trade_no    string
-	num         string
-	pt          string
-	result_type string
-	split       string
-	city_name   string
-	city_code   string
-	ip_remain   string
-	area        string
-	no_area     string
-	ip_seg      string
-	no_ip_seg   string
-	isp         string
-	filter      string
+	key         string //密钥
+	trade_no    string //业务编号
+	num         string //提取数量
+	pt          string //代理类型
+	result_type string //返回类型
+	split       string //结果分隔符
+	city_name   string //地区名称
+	city_code   string //邮政编码
+	ip_remain   string //剩余可用时长
+	area        string //筛选地区
+	no_area     string //排除地区
+	ip_seg      string //筛选IP段
+	no_ip_seg   string //排除IP段
+	isp         string //运营商筛选
+	filter      string //IP去重
 }
 
 func (d *DynamicGetIps) Key() string {

@@ -2,8 +2,8 @@ package common
 
 //账户 -- 获取账户余额
 type UsersGetBalance struct {
-	key     string
-	user_id string
+	key     string //密钥
+	user_id string //用户id
 }
 
 func (u *UsersGetBalance) Key() string {

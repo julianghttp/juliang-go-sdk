@@ -2,8 +2,8 @@ package common
 
 //独享代理 -- 获取代理IP白名单
 type AloneGetWhiteIp struct {
-	key      string
-	trade_no string
+	key      string //密钥
+	trade_no string //业务编号
 }
 
 func (a *AloneGetWhiteIp) Key() string {

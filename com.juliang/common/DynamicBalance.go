@@ -2,8 +2,8 @@ package common
 
 //动态代理 -- 获取剩余可提取IP数量
 type DynamicBalance struct {
-	key      string
-	trade_no string
+	key      string //密钥
+	trade_no string //业务编号
 }
 
 func (d *DynamicBalance) Key() string {

@@ -2,8 +2,8 @@ package common
 
 //动态代理 -- 获取代理IP白名单
 type DynamicGetWhiteIp struct {
-	key      string
-	trade_no string
+	key      string //密钥
+	trade_no string //业务编号
 }
 
 func (d *DynamicGetWhiteIp) Key() string {

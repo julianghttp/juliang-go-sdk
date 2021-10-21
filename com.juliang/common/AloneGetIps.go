@@ -2,12 +2,12 @@ package common
 
 //独享代理 -- 获取独享代理详情
 type AloneGetIps struct {
-	key           string
-	trade_no      string
-	sock_port     string
-	city_name     string
-	city_code     string
-	order_endtime string
+	key           string //密钥
+	trade_no      string //业务编号
+	sock_port     string //SOCK代理端口
+	city_name     string //地区名称
+	city_code     string //邮政编码
+	order_endtime string //业务到期时间
 }
 
 func (a *AloneGetIps) Key() string {
