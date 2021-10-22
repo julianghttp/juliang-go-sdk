@@ -16,29 +16,29 @@ GOPROXY=https://goproxy.io,direct
 在代码块中直接引用即可
 ```go
     import (
-	    juliang "gitee.com/xgqitian/juliang-go-sdk/com.juliang"
-	    "gitee.com/xgqitian/juliang-go-sdk/com.juliang/common"
+	    juliang "gitee.com/juliangip/juliang-go-sdk/com.juliang"
+	    "gitee.com/juliangip/juliang-go-sdk/com.juliang/common"
     )
 ```
 
 ### 通过go get安装
 通过`go get`将SDK安装到您的`GOPATH`中：
 ```go
-go get https://gitee.com/xgqitian/juliang-go-sdk
+go get https://gitee.com/juliangip/juliang-go-sdk
 ```
 
 ### 通过源码包安装
-前往 [gitee代码托管地址](https://gitee.com/xgqitian/juliang-go-sdk) 下载最新代码，解压后将其放在您的GOPATH中
+前往 [gitee代码托管地址](https://gitee.com/juliangip/juliang-go-sdk) 下载最新代码，解压后将其放在您的GOPATH中
 
 ## 示例
-在[juliang_test.go](https://gitee.com/xgqitian/juliang-go-sdk/blob/master/test/juliang_test.go) 文件中看详细示例
+在[juliang_test.go](https://gitee.com/juliangip/juliang-go-sdk/blob/master/test/juliang_test.go) 文件中看详细示例
 ```go
 package main
 
 import (
 	"fmt"
-	juliang "gitee.com/xgqitian/juliang-go-sdk/com.juliang"
-	"gitee.com/xgqitian/juliang-go-sdk/com.juliang/common"
+	juliang "gitee.com/juliangip/juliang-go-sdk/com.juliang"
+	"gitee.com/juliangip/juliang-go-sdk/com.juliang/common"
 )
 
 func main() {

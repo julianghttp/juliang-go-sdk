@@ -2,8 +2,8 @@ package test
 
 import (
 	"fmt"
-	"gitee.com/xgqitian/juliang-go-sdk/com.juliang"
-	"gitee.com/xgqitian/juliang-go-sdk/com.juliang/common"
+	"gitee.com/juliangip/juliang-go-sdk/com.juliang"
+	"gitee.com/juliangip/juliang-go-sdk/com.juliang/common"
 	"testing"
 )
 
