@@ -5,6 +5,7 @@ type AloneGetIps struct {
 	key           string //密钥
 	trade_no      string //业务编号
 	sock_port     string //SOCK代理端口
+	ip_remain     string //IP可用时间[动态型独有]
 	city_name     string //地区名称
 	city_code     string //邮政编码
 	order_endtime string //业务到期时间
