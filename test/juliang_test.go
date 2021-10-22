@@ -7,11 +7,22 @@ import (
 	"testing"
 )
 
+const (
+	dynamic_trade_no  = "11351242352345234523453465735679"
+	dynamic_trade_key = "0794dsfdsgsdgw3tg45t324502bb21cbcd"
+
+	user_id  = "1215104"
+	user_key = "514a5dfgsdgshwry45gergwerg2817a866328c"
+
+	alone_trade_no = "405856456453623452345135232429"
+	alone_key      = "7cc5a5ba63sgeuhfr9u2hihr30u3hq9ef84a82f1"
+)
+
 //独享代理 -- 获取代理IP白名单
 func TestLanguage_aloneGetWhiteIp(t *testing.T) {
 	var whiteIp common.AloneGetWhiteIp
-	whiteIp.SetTrade_no("405856456453623452345135232429")
-	whiteIp.SetKey("7cc5a5ba63sgeuhfr9u2hihr30u3hq9ef84a82f1")
+	whiteIp.SetTrade_no(alone_trade_no)
+	whiteIp.SetKey(alone_key)
 	value := juliang.AloneGetWhiteIp(whiteIp)
 	fmt.Println(value)
 }
@@ -19,8 +30,8 @@ func TestLanguage_aloneGetWhiteIp(t *testing.T) {
 //独享代理 -- 设置代理IP白名单
 func TestLanguage_aloneSetWhiteIp(t *testing.T) {
 	var whiteIp common.AloneSetWhiteIp
-	whiteIp.SetTrade_no("405856456453623452345135232429")
-	whiteIp.SetKey("7cc5a5ba63sgeuhfr9u2hihr30u3hq9ef84a82f1")
+	whiteIp.SetTrade_no(alone_trade_no)
+	whiteIp.SetKey(alone_key)
 	whiteIp.SetIps("10.10.10.10")
 	value := juliang.AloneSetWhiteIp(whiteIp)
 	fmt.Println(value)
@@ -29,8 +40,8 @@ func TestLanguage_aloneSetWhiteIp(t *testing.T) {
 //独享代理 -- 获取独享代理详情
 func TestLanguage_aloneGetIps(t *testing.T) {
 	var ips common.AloneGetIps
-	ips.SetTrade_no("405856456453623452345135232429")
-	ips.SetKey("7cc5a5ba63sgeuhfr9u2hihr30u3hq9ef84a82f1")
+	ips.SetTrade_no(alone_trade_no)
+	ips.SetKey(alone_key)
 	value := juliang.AloneGetIps(ips)
 	fmt.Println(value)
 }
@@ -38,8 +49,8 @@ func TestLanguage_aloneGetIps(t *testing.T) {
 //账户 -- 获取账户余额
 func TestLanguage_usersGetBalance(t *testing.T) {
 	var balance common.UsersGetBalance
-	balance.SetUser_id("1215104")
-	balance.SetKey("514a5dfgsdgshwry45gergwerg2817a866328c")
+	balance.SetUser_id(user_id)
+	balance.SetKey(user_key)
 	value := juliang.UsersGetBalance(balance)
 	fmt.Println(value)
 }
@@ -47,8 +58,8 @@ func TestLanguage_usersGetBalance(t *testing.T) {
 //动态代理 -- 获取剩余可提取IP数量
 func TestLanguage_dynamicBalance(t *testing.T) {
 	var balance common.DynamicBalance
-	balance.SetKey("0794dsfdsgsdgw3tg45t324502bb21cbcd")
-	balance.SetTrade_no("11351242352345234523453465735679")
+	balance.SetKey(dynamic_trade_key)
+	balance.SetTrade_no(dynamic_trade_no)
 	value := juliang.DynamicBalance(balance)
 	fmt.Println(value)
 }
@@ -56,8 +67,8 @@ func TestLanguage_dynamicBalance(t *testing.T) {
 //动态代理 -- 获取代理剩余可用时长
 func TestLanguage_dynamicRemain(t *testing.T) {
 	var remain common.DynamicRemain
-	remain.SetKey("0794dsfdsgsdgw3tg45t324502bb21cbcd")
-	remain.SetTrade_no("11351242352345234523453465735679")
+	remain.SetKey(dynamic_trade_key)
+	remain.SetTrade_no(dynamic_trade_no)
 	remain.SetProxy("1.1.1.1:8088")
 	value := juliang.DynamicRemain(remain)
 	fmt.Println(value)
@@ -66,8 +77,8 @@ func TestLanguage_dynamicRemain(t *testing.T) {
 //动态代理 -- 获取代理IP白名单
 func TestLanguage_dynamicGetWhiteIp(t *testing.T) {
 	var getWhiteIp common.DynamicGetWhiteIp
-	getWhiteIp.SetKey("0794dsfdsgsdgw3tg45t324502bb21cbcd")
-	getWhiteIp.SetTrade_no("11351242352345234523453465735679")
+	getWhiteIp.SetKey(dynamic_trade_key)
+	getWhiteIp.SetTrade_no(dynamic_trade_no)
 	value := juliang.DynamicGetWhiteIp(getWhiteIp)
 	fmt.Println(value)
 }
@@ -75,8 +86,8 @@ func TestLanguage_dynamicGetWhiteIp(t *testing.T) {
 //动态代理 -- 设置代理IP白名单
 func TestLanguage_dynamicSetWhiteIp(t *testing.T) {
 	var setWhiteIp common.DynamicSetWhiteIp
-	setWhiteIp.SetTrade_no("11351242352345234523453465735679")
-	setWhiteIp.SetKey("0794dsfdsgsdgw3tg45t324502bb21cbcd")
+	setWhiteIp.SetKey(dynamic_trade_key)
+	setWhiteIp.SetTrade_no(dynamic_trade_no)
 	setWhiteIp.SetIps("12.12.12.12")
 	value := juliang.DynamicSetWhiteIp(setWhiteIp)
 	fmt.Println(value)
@@ -85,8 +96,8 @@ func TestLanguage_dynamicSetWhiteIp(t *testing.T) {
 //动态代理 -- 校验代理有效性
 func TestLanguage_dynamicCheck(t *testing.T) {
 	var dynamicCheck common.DynamicCheck
-	dynamicCheck.SetKey("0794dsfdsgsdgw3tg45t324502bb21cbcd")
-	dynamicCheck.SetTrade_no("11351242352345234523453465735679")
+	dynamicCheck.SetKey(dynamic_trade_key)
+	dynamicCheck.SetTrade_no(dynamic_trade_no)
 	dynamicCheck.SetProxy("10.10.10.10:8088")
 	value := juliang.DynamicCheck(dynamicCheck)
 	fmt.Println(value)
@@ -95,8 +106,8 @@ func TestLanguage_dynamicCheck(t *testing.T) {
 //动态代理 -- 提取动态代理
 func TestLanguage_dynamicGetIps(t *testing.T) {
 	var dynamicGetIps common.DynamicGetIps
-	dynamicGetIps.SetKey("0794dsfdsgsdgw3tg45t324502bb21cbcd")
-	dynamicGetIps.SetTrade_no("11351242352345234523453465735679")
+	dynamicGetIps.SetKey(dynamic_trade_key)
+	dynamicGetIps.SetTrade_no(dynamic_trade_no)
 	dynamicGetIps.SetNum("10")
 	value := juliang.DynamicGetIps(dynamicGetIps)
 	fmt.Println(value)
