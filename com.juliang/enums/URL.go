@@ -2,7 +2,7 @@ package enums
 
 const (
 	//主站地址
-	DOMAIN = "http://v1.api.juliangip.com"
+	DOMAIN = "https://v1.api.juliangip.com"
 	// USERS_GETBALANCE DOMAIN             = "http://192.168.10.60:8087"
 	//USERS_GETBALANCE 获取账户余额
 	USERS_GETBALANCE = DOMAIN + "/v1/users/getbalance"
