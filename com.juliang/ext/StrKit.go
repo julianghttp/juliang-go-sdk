@@ -4,9 +4,26 @@ import (
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
+	"reflect"
 	"sort"
 	"strings"
 )
+
+//结构体转换为map
+func StructToMap(t reflect.Type, v reflect.Value, params map[string]string) map[string]string {
+	for k := 0; k < t.NumField(); k++ {
+		key := t.Field(k).Name
+		if key == "key" {
+			continue
+		}
+		value := v.Field(k).String()
+		if value == "" {
+			continue
+		}
+		params[key] = value
+	}
+	return params
+}
 
 //计算签名
 func GetParams(object map[string]string, appKey string) map[string]string {

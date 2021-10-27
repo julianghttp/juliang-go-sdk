@@ -14,17 +14,7 @@ func DynamicGetIps(dynamicgetips common.DynamicGetIps) string {
 	v := reflect.ValueOf(dynamicgetips)
 	params := make(map[string]string)
 	var appKey string = dynamicgetips.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_GETIPS)
 	if err != nil {
@@ -39,17 +29,7 @@ func DynamicCheck(check common.DynamicCheck) string {
 	v := reflect.ValueOf(check)
 	params := make(map[string]string)
 	var appKey string = check.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_CHECK)
 	if err != nil {
@@ -64,17 +44,7 @@ func DynamicSetWhiteIp(ip common.DynamicSetWhiteIp) string {
 	v := reflect.ValueOf(ip)
 	params := make(map[string]string)
 	var appKey string = ip.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_SETWHITEIP)
 	if err != nil {
@@ -89,17 +59,7 @@ func DynamicGetWhiteIp(ip common.DynamicGetWhiteIp) string {
 	v := reflect.ValueOf(ip)
 	params := make(map[string]string)
 	var appKey string = ip.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_GETWHITEIP)
 	if err != nil {
@@ -114,17 +74,7 @@ func DynamicRemain(remain common.DynamicRemain) string {
 	v := reflect.ValueOf(remain)
 	params := make(map[string]string)
 	var appKey string = remain.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_REMAIN)
 	if err != nil {
@@ -139,17 +89,7 @@ func DynamicBalance(balance common.DynamicBalance) string {
 	v := reflect.ValueOf(balance)
 	params := make(map[string]string)
 	var appKey string = balance.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_BALANCE)
 	if err != nil {
@@ -164,17 +104,7 @@ func UsersGetBalance(balance common.UsersGetBalance) string {
 	v := reflect.ValueOf(balance)
 	params := make(map[string]string)
 	var appKey string = balance.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.USERS_GETBALANCE)
 	if err != nil {
@@ -189,17 +119,7 @@ func AloneGetIps(ips common.AloneGetIps) string {
 	v := reflect.ValueOf(ips)
 	params := make(map[string]string)
 	var appKey string = ips.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.ALONE_GETIPS)
 	if err != nil {
@@ -214,17 +134,7 @@ func AloneSetWhiteIp(ip common.AloneSetWhiteIp) string {
 	v := reflect.ValueOf(ip)
 	params := make(map[string]string)
 	var appKey string = ip.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.ALONE_SETWHITEIP)
 	if err != nil {
@@ -239,17 +149,7 @@ func AloneGetWhiteIp(ip common.AloneGetWhiteIp) string {
 	v := reflect.ValueOf(ip)
 	params := make(map[string]string)
 	var appKey string = ip.Key()
-	for k := 0; k < t.NumField(); k++ {
-		key := t.Field(k).Name
-		if key == "key" {
-			continue
-		}
-		value := v.Field(k).String()
-		if value == "" {
-			continue
-		}
-		params[key] = value
-	}
+	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.ALONE_GETWHITEIP)
 	if err != nil {
