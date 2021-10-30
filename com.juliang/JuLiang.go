@@ -53,6 +53,21 @@ func DynamicSetWhiteIp(ip common.DynamicSetWhiteIp) string {
 	return ext.Post(Url, getipsParams)
 }
 
+//动态代理 -- 替换IP白名单
+func DynamicReplaceWhiteIp(ip common.DynamicReplaceWhiteIp) string {
+	t := reflect.TypeOf(ip)
+	v := reflect.ValueOf(ip)
+	params := make(map[string]string)
+	var appKey string = ip.Key()
+	params = ext.StructToMap(t, v, params)
+	var getipsParams = ext.GetParams(params, appKey)
+	Url, err := url.Parse(enums.DYNAMIC_REPLACEWHITEIP)
+	if err != nil {
+		return ""
+	}
+	return ext.Post(Url, getipsParams)
+}
+
 //动态代理 -- 获取IP白名单
 func DynamicGetWhiteIp(ip common.DynamicGetWhiteIp) string {
 	t := reflect.TypeOf(ip)
@@ -137,6 +152,21 @@ func AloneSetWhiteIp(ip common.AloneSetWhiteIp) string {
 	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.ALONE_SETWHITEIP)
+	if err != nil {
+		return ""
+	}
+	return ext.Post(Url, getipsParams)
+}
+
+//独享代理 -- 替换IP白名单
+func AloneReplaceWhiteIp(ip common.AloneReplaceWhiteIp) string {
+	t := reflect.TypeOf(ip)
+	v := reflect.ValueOf(ip)
+	params := make(map[string]string)
+	var appKey string = ip.Key()
+	params = ext.StructToMap(t, v, params)
+	var getipsParams = ext.GetParams(params, appKey)
+	Url, err := url.Parse(enums.ALONE_REPLACEWHITEIP)
 	if err != nil {
 		return ""
 	}

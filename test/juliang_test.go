@@ -18,6 +18,16 @@ const (
 	alone_key      = "7cc5a5ba63sgeuhfr9u2hihr30u3hq9ef84a82f1"
 )
 
+func TestLanguage_aloneReplaceWhiteIp(t *testing.T) {
+	var whiteIp common.AloneReplaceWhiteIp
+	whiteIp.SetTrade_no(alone_trade_no)
+	whiteIp.SetKey(alone_key)
+	whiteIp.SetOld_ip("")
+	whiteIp.SetNew_ip("6.6.6.6,4.4.4.4,7.7.7.7")
+	value := juliang.AloneReplaceWhiteIp(whiteIp)
+	fmt.Println(value)
+}
+
 //独享代理 -- 获取代理IP白名单
 func TestLanguage_aloneGetWhiteIp(t *testing.T) {
 	var whiteIp common.AloneGetWhiteIp
@@ -80,6 +90,17 @@ func TestLanguage_dynamicGetWhiteIp(t *testing.T) {
 	getWhiteIp.SetKey(dynamic_trade_key)
 	getWhiteIp.SetTrade_no(dynamic_trade_no)
 	value := juliang.DynamicGetWhiteIp(getWhiteIp)
+	fmt.Println(value)
+}
+
+func TestLanguage_dynamicReplaceWhiteIp(t *testing.T) {
+	var ip common.DynamicReplaceWhiteIp
+	ip.SetTrade_no(dynamic_trade_no)
+	ip.SetKey(dynamic_trade_key)
+	//ip.SetOld_ip("3.3.3.3")
+	ip.SetNew_ip("6.6.6.6,9.9.9.9")
+	ip.SetReset("1")
+	value := juliang.DynamicReplaceWhiteIp(ip)
 	fmt.Println(value)
 }
 
