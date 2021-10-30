@@ -4,7 +4,7 @@ const (
 	// DOMAIN 主站地址
 	DOMAIN = "https://v1.api.juliangip.com"
 	// USERS_GETBALANCE
-	//DOMAIN = "http://192.168.10.60:8087"
+	//DOMAIN = "http://192.168.10.52:8087"
 	//USERS_GETBALANCE 获取账户余额
 	USERS_GETBALANCE = DOMAIN + "/users/getbalance"
 	// DYNAMIC_GETIPS 动态代理 -- 提取动态代理

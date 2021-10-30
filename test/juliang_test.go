@@ -97,8 +97,8 @@ func TestLanguage_dynamicReplaceWhiteIp(t *testing.T) {
 	var ip common.DynamicReplaceWhiteIp
 	ip.SetTrade_no(dynamic_trade_no)
 	ip.SetKey(dynamic_trade_key)
-	//ip.SetOld_ip("3.3.3.3")
-	ip.SetNew_ip("6.6.6.6,9.9.9.9")
+	//ip.SetOld_ip("10.10.10.10")
+	ip.SetNew_ip("20.20.20.20,255.255.255.255")
 	ip.SetReset("1")
 	value := juliang.DynamicReplaceWhiteIp(ip)
 	fmt.Println(value)
