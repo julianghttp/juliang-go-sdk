@@ -2,11 +2,13 @@ package enums
 
 const (
 	// DOMAIN 主站地址
-	DOMAIN = "https://v1.api.juliangip.com"
+	//DOMAIN = "https://v1.api.juliangip.com"
 	// USERS_GETBALANCE
-	//DOMAIN = "http://192.168.10.52:8087"
+	DOMAIN = "http://127.0.0.1:8087"
 	//USERS_GETBALANCE 获取账户余额
 	USERS_GETBALANCE = DOMAIN + "/users/getbalance"
+	// USERS_GETALLORDERS 获取账户下对应类型的所有正常状态订单号
+	USERS_GETALLORDERS = DOMAIN + "/users/getAllOrders"
 	// DYNAMIC_GETIPS 动态代理 -- 提取动态代理
 	DYNAMIC_GETIPS = DOMAIN + "/dynamic/getips"
 	// DYNAMIC_CHECK 动态代理 -- 校验IP可用性

@@ -128,6 +128,21 @@ func UsersGetBalance(balance common.UsersGetBalance) string {
 	return ext.Post(Url, getipsParams)
 }
 
+// UsersgetAllOrders 获取账户下对应类型的所有正常状态订单号
+func UsersgetAllOrders(orders common.UsersGetAllOrders) string {
+	t := reflect.TypeOf(orders)
+	v := reflect.ValueOf(orders)
+	params := make(map[string]string)
+	var appKey string = orders.Key()
+	params = ext.StructToMap(t, v, params)
+	var getipsParams = ext.GetParams(params, appKey)
+	Url, err := url.Parse(enums.USERS_GETALLORDERS)
+	if err != nil {
+		return ""
+	}
+	return ext.Post(Url, getipsParams)
+}
+
 //独享代理 -- 获取代理详情
 func AloneGetIps(ips common.AloneGetIps) string {
 	t := reflect.TypeOf(ips)

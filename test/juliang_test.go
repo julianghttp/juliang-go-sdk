@@ -65,6 +65,15 @@ func TestLanguage_usersGetBalance(t *testing.T) {
 	fmt.Println(value)
 }
 
+func TestLanguage_usersgetAllOrders(t *testing.T) {
+	var gao common.UsersGetAllOrders
+	gao.SetKey(user_key)
+	gao.SetUser_id(user_id)
+	gao.SetProduct_type("1")
+	value := juliang.UsersgetAllOrders(gao)
+	fmt.Println(value)
+}
+
 //动态代理 -- 获取剩余可提取IP数量
 func TestLanguage_dynamicBalance(t *testing.T) {
 	var balance common.DynamicBalance
