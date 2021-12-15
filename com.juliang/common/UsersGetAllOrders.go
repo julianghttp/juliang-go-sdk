@@ -5,6 +5,7 @@ type UsersGetAllOrders struct {
 	key          string //密钥
 	user_id      string //用户id
 	product_type string //产品类型
+	show         string //是否返回产品秘钥
 }
 
 func (u *UsersGetAllOrders) Key() string {
@@ -29,4 +30,12 @@ func (u *UsersGetAllOrders) Product_type() string {
 
 func (u *UsersGetAllOrders) SetProduct_type(product_type string) {
 	u.product_type = product_type
+}
+
+func (u *UsersGetAllOrders) Show() string {
+	return u.show
+}
+
+func (u *UsersGetAllOrders) SetShow(show string) {
+	u.show = show
 }

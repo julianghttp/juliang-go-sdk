@@ -18,6 +18,37 @@ const (
 	alone_key      = "7cc5a5ba63sgeuhfr9u2hihr30u3hq9ef84a82f1"
 )
 
+//账户 -- 获取账户余额
+func TestLanguage_usersGetBalance(t *testing.T) {
+	var balance common.UsersGetBalance
+	balance.SetUser_id(user_id)
+	balance.SetKey(user_key)
+	value := juliang.UsersGetBalance(balance)
+	fmt.Println(value)
+}
+
+//获取账户下对应产品类型的所有正常订单信息
+func TestLanguage_usersGetAllOrders(t *testing.T) {
+	var gao common.UsersGetAllOrders
+	gao.SetKey(user_key)
+	gao.SetUser_id(user_id)
+	gao.SetProduct_type("1")
+	gao.SetShow("1")
+	value := juliang.UsersgetAllOrders(gao)
+	fmt.Println(value)
+}
+
+//获取所属省份的可用代理城市信息
+func Test_GetCityInfo(t *testing.T) {
+	var cityRequest common.UsersGetCity
+	cityRequest.SetKey(user_key)
+	cityRequest.SetUser_id(user_id)
+	cityRequest.SetProvince("湖北,河北,山东")
+	value := juliang.UsersGetCity(cityRequest)
+	fmt.Print(value)
+}
+
+//替换Ip白名单
 func TestLanguage_aloneReplaceWhiteIp(t *testing.T) {
 	var whiteIp common.AloneReplaceWhiteIp
 	whiteIp.SetTrade_no(alone_trade_no)
@@ -56,24 +87,6 @@ func TestLanguage_aloneGetIps(t *testing.T) {
 	fmt.Println(value)
 }
 
-//账户 -- 获取账户余额
-func TestLanguage_usersGetBalance(t *testing.T) {
-	var balance common.UsersGetBalance
-	balance.SetUser_id(user_id)
-	balance.SetKey(user_key)
-	value := juliang.UsersGetBalance(balance)
-	fmt.Println(value)
-}
-
-func TestLanguage_usersgetAllOrders(t *testing.T) {
-	var gao common.UsersGetAllOrders
-	gao.SetKey(user_key)
-	gao.SetUser_id(user_id)
-	gao.SetProduct_type("1")
-	value := juliang.UsersgetAllOrders(gao)
-	fmt.Println(value)
-}
-
 //动态代理 -- 获取剩余可提取IP数量
 func TestLanguage_dynamicBalance(t *testing.T) {
 	var balance common.DynamicBalance
@@ -102,6 +115,7 @@ func TestLanguage_dynamicGetWhiteIp(t *testing.T) {
 	fmt.Println(value)
 }
 
+//动态代理 -- 替换Ip白名单
 func TestLanguage_dynamicReplaceWhiteIp(t *testing.T) {
 	var ip common.DynamicReplaceWhiteIp
 	ip.SetTrade_no(dynamic_trade_no)

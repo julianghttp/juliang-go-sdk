@@ -8,6 +8,51 @@ import (
 	"reflect"
 )
 
+//获取账户余额
+func UsersGetBalance(balance common.UsersGetBalance) string {
+	t := reflect.TypeOf(balance)
+	v := reflect.ValueOf(balance)
+	params := make(map[string]string)
+	var appKey string = balance.Key()
+	params = ext.StructToMap(t, v, params)
+	var getipsParams = ext.GetParams(params, appKey)
+	Url, err := url.Parse(enums.USERS_GETBALANCE)
+	if err != nil {
+		return ""
+	}
+	return ext.Post(Url, getipsParams)
+}
+
+// UsersgetAllOrders 获取账户下对应类型的所有正常状态订单号
+func UsersgetAllOrders(orders common.UsersGetAllOrders) string {
+	t := reflect.TypeOf(orders)
+	v := reflect.ValueOf(orders)
+	params := make(map[string]string)
+	var appKey string = orders.Key()
+	params = ext.StructToMap(t, v, params)
+	var getipsParams = ext.GetParams(params, appKey)
+	Url, err := url.Parse(enums.USERS_GETALLORDERS)
+	if err != nil {
+		return ""
+	}
+	return ext.Post(Url, getipsParams)
+}
+
+//获取所属省份可用代理城市信息
+func UsersGetCity(cityInfo common.UsersGetCity) string {
+	t := reflect.TypeOf(cityInfo)
+	v := reflect.ValueOf(cityInfo)
+	params := make(map[string]string)
+	appKey := cityInfo.Key()
+	params = ext.StructToMap(t, v, params)
+	getCityParams := ext.GetParams(params, appKey)
+	Url, err := url.Parse(enums.USERS_GETCITY)
+	if err != nil {
+		return ""
+	}
+	return ext.Post(Url, getCityParams)
+}
+
 //动态代理 -- 提取动态代理
 func DynamicGetIps(dynamicgetips common.DynamicGetIps) string {
 	t := reflect.TypeOf(dynamicgetips)
@@ -107,36 +152,6 @@ func DynamicBalance(balance common.DynamicBalance) string {
 	params = ext.StructToMap(t, v, params)
 	var getipsParams = ext.GetParams(params, appKey)
 	Url, err := url.Parse(enums.DYNAMIC_BALANCE)
-	if err != nil {
-		return ""
-	}
-	return ext.Post(Url, getipsParams)
-}
-
-//获取账户余额
-func UsersGetBalance(balance common.UsersGetBalance) string {
-	t := reflect.TypeOf(balance)
-	v := reflect.ValueOf(balance)
-	params := make(map[string]string)
-	var appKey string = balance.Key()
-	params = ext.StructToMap(t, v, params)
-	var getipsParams = ext.GetParams(params, appKey)
-	Url, err := url.Parse(enums.USERS_GETBALANCE)
-	if err != nil {
-		return ""
-	}
-	return ext.Post(Url, getipsParams)
-}
-
-// UsersgetAllOrders 获取账户下对应类型的所有正常状态订单号
-func UsersgetAllOrders(orders common.UsersGetAllOrders) string {
-	t := reflect.TypeOf(orders)
-	v := reflect.ValueOf(orders)
-	params := make(map[string]string)
-	var appKey string = orders.Key()
-	params = ext.StructToMap(t, v, params)
-	var getipsParams = ext.GetParams(params, appKey)
-	Url, err := url.Parse(enums.USERS_GETALLORDERS)
 	if err != nil {
 		return ""
 	}
